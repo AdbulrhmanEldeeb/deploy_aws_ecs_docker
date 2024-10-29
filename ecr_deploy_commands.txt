@@ -1,0 +1,24 @@
+# after buiding an image 
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 593793037195.dkr.ecr.us-east-1.amazonaws.com
+
+
+
+# easier way to push to ecr is to make a new repository , and copy push commands 
+# create a repo on ecr and copy the uri of it 
+docker tag arabic_sa_aws_ecs:latest add-uri-here:latest
+
+# docker push add-uri-here:latest 
+
+# create a cluster , then create an task defination and add a serives to taske defination , make the two ports as the same as you run the container locallly 
+
+# if the service did not work , edit inbound rules and add a rule  like this 
+type: all traffic
+source: custom 0.0.0.0/0
+
+last minutes of this vedio are useful 
+https://youtu.be/1_AlV-FFxM8?si=0wquvOb9JX-4BU9H
+
+
+# easier way to push to ecr is to make a new repository , and copy push commands 
+#  اشتغل علي كودسبيس بعد كدا عشان لم تيجي تعمل ايميمج وترفعها علي ecr بيكون الرفع اسرع بكتير 
+# use codespaces , build and push from it , this is better 
