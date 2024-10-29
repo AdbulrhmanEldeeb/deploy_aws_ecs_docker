@@ -1,0 +1,1 @@
+## use this template to deploy containers on aws ecs 
